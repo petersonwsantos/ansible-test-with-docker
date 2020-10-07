@@ -1,6 +1,3 @@
-
-```
-
 #!/bin/bash
 
 docker build -t ansible-test .
@@ -9,5 +6,3 @@ ansible-playbook -i inventory.ini playbook.yml
 
 docker stop node1
 docker rm node1
-
-```

@@ -1,20 +1,23 @@
 # ansible-test-with-docker
 Test your Playbook with node Docker container.
 
+# Build image
 ```
-
-#!/bin/bash
-
-# build image
 docker build -t ansible-test .
 
-# run container
+```
+# Run container
+```
 docker run -ti --privileged --name node1 -d -p 5000:22 ansible-test
 
-# exec ansible
-ansible-playbook -i inventory.ini playbook.yml
+```
+# Execute Ansible Playbook demo
+```
+ansible-playbook -i inventory.ini -l node1 playbook.yml
 
-# clean
+```
+# Cleaning
+```
 docker stop node1
 docker rm node1
 
